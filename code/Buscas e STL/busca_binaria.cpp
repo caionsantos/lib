@@ -12,6 +12,7 @@ int main() {
     int mid;
     bool pos;
     int maximpossivel = 0;
+    vector<int> sortado;
     while(r >= l){
         mid = (l + r)/2;
         pos = true;
@@ -25,6 +26,10 @@ int main() {
             r = mid - 1;
         }
     }
+    upper_bound(sortado.begin(), sortado.end(), p); //PRIMEIRO ELEMENTO >= P
+    lower_bound(sortado.begin(), sortado.end(), p); //PRIMEIRO ELEMENTO > P
+    //subtrair .begin() retorna índice
+    //subtrair upper do lower retorna quantidade
 
     return 0;
 }
