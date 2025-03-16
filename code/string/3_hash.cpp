@@ -33,6 +33,11 @@ int main() {
         hashupto2[i] = ((hashupto2[i - 1] * l) % mod2) + s[i];
         hashupto2[i] = hashupto2[i] % mod2;
     }
+    //hash(l..r) = pref(r) - (pref(l - 1) * (k^(r-l+1))) % MOD
+    //aa = hashupto1[i + (pref.size() - 1)] - ((hashupto1[i - 1] * pot[pref.size()]) % mod);
+    //aa = aa % mod;
+    //bb = hashupto2[i + (pref.size() - 1)] - ((hashupto2[i - 1] * pot2[pref.size()]) % mod2);
+    //bb = bb % mod2;
 
 
     return 0;
