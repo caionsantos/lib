@@ -12,7 +12,7 @@ long long int comb(long long int n, long long int i){
         num *= (n - j);
         num /= (j + 1);
     }
-    //COMBINAÇÃO ITERATIVA
+    //COMBINACAO ITERATIVA
     return num;
 }
 
@@ -28,14 +28,14 @@ int main() {
     for(long long int i = 1; i < fatn.size(); i++){
         fatn[i] = (fatn[i - 1] * i) % mod;
     }
-    //combinação = (n!/(i!*(n-i)))
-    //combinação com repetição C(n, i) = C(n + i - 1, i); 
+    //combinacao = (n!/(i!*(n-i)))
+    //combinacao com repeticao C(n, i) = C(n + i - 1, i); 
     long long int aa = ((fatn[m] * fatn[n - 1])) % mod;
     long long int bb = fexp(aa, mod - 2);
     long long int combrep = (fatn[n + m - 1] * bb) % mod;
 
     long long int comb = ((fatn[n])/(fatn[n-m] * fatn[m]));
-    //para operações com módulo é preciso ao invés de dividir, multiplicar
+    //para operacoes com modulo eh preciso ao inves de dividir, multiplicar
     //pelo inverso modular (n ^ mod-2)
 
     return 0;

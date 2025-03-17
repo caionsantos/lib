@@ -28,7 +28,7 @@ int main() {
     }
     upper_bound(sortado.begin(), sortado.end(), p); //PRIMEIRO ELEMENTO >= P
     lower_bound(sortado.begin(), sortado.end(), p); //PRIMEIRO ELEMENTO > P
-    //subtrair .begin() retorna índice
+    //subtrair .begin() retorna indice
     //subtrair upper do lower retorna quantidade
 
     return 0;

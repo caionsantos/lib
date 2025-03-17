@@ -4,7 +4,7 @@ using namespace std;
 
 void subsetsum(int n, vector<int> &all, vector<long long int> &atual){
     if(n == all.size()){
-        //verificação
+        //verificacao
         return;
     }
 

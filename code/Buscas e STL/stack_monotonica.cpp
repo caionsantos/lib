@@ -25,7 +25,7 @@ int main() {
         }
         monotesq.push(i);
     }
-    //GUARDA MENOR MAIS PRÓXIMO À ESQUERDA
+    //GUARDA MENOR MAIS PROXIMO A ESQUERDA
 
     for(int i = 1; i <= n; i++){
         while((monotdir.size() > 0) and (tabuas[n - i] <= tabuas[monotdir.top()])){
@@ -39,7 +39,7 @@ int main() {
         }
         monotdir.push((n - i));
     }
-    //VERSÃO INVERTIDA
+    //VERSAO INVERTIDA
 
     long long int ar;
     long long int maxarea = 0;
