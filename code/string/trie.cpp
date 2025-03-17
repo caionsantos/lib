@@ -39,7 +39,7 @@ int main() {
     cin.tie(NULL);
 
     vector<Node> trie(1);
-    //trie pode ser modificada com DFS para propagar mudanças
+    //trie pode ser modificada com DFS para propagar mudancas
     //TRIE DE XOR -> max(busca diferentes) e min(busca igual)
 
     return 0;
