@@ -22,7 +22,7 @@ long long int gcd(long long int a, long long int b){
     } else{
         return gcd(b, a % b);
     }
-    //já implementado em __gcd()
+    //ja implementado em __gcd()
 }
 
 long long int lcm(long long int a, long long int b){
