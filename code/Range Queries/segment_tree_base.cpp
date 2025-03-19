@@ -50,7 +50,7 @@ int main(){
     cin.tie(NULL);
     int n;
     vector<long long int> segtree(4 * n);
-    //ADICIONAR X EM L E -X EM R+1 É IGUAL A ADICIONAR X EM [L, R]
+    //ADICIONAR X EM L E -X EM R+1 EH IGUAL A ADICIONAR X EM [L, R]
     //SEGTREE PARA ACHAR MENORES:
     // for(int i = 0; i < n; i++){
     //     range = upper_bound(mansort.begin(), mansort.end(), man[i]) - mansort.begin();
