@@ -39,5 +39,10 @@ int main() {
         }
     }
 
+    //numerador = abs(((y2 - y) * cx) - ((x2 - x) * cy) + (x2 * y) - (y2 * x));
+    //denominador = sqrt(((y2 - y) * (y2 - y)) + ((x2 - x) * (x2 - x)));
+    //dist = numerador/denominador;
+    //distancia entre reta formada pelos pontos (x, y) e (x2, y2) ate o ponto (cx, cy)
+
     return 0;
 }
