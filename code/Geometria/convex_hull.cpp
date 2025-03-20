@@ -1,12 +1,27 @@
 #include <bits/stdc++.h>
-#include "ponto.cpp"
 #define endl '\n'
 using namespace std;
+
+struct Point{
+    //alterar tipos se preciso
+    long long int x, y;
+    Point(long long int x, long long int y){
+        this->x = x;
+        this->y = y;
+    }
+    Point operator+(Point o){ return Point(x + o.x, y + o.y); }
+    Point operator-(Point o){ return Point(x - o.x, y - o.y); }
+    Point operator*(long long int k){ return Point(k*x, k*y); }
+    double len(){ return hypot(x, y); }
+    long long int cross(Point o){ return ((x * o.y) - (y*o.x)); }
+    bool operator<(Point o){ return(tie(x, y) < tie(o.x, o.y)); }
+    bool operator==(Point o){ return (tie(x, y) == tie(o.x, o.y)); }
+};
 
 int orientation(Point a, Point b, Point c){
     Point ab = b - a;
     Point bc = c - b;
-    double v = ab.cross(bc);
+    long long int v = ab.cross(bc);
 
     if(v < 0){
         return -1; //horario
@@ -65,10 +80,43 @@ void convex_hull(vector<Point> &a, bool include_collinear=false){
     }
 }
 
+bool insidetriangle(Point a, Point b, Point c, Point point) {
+    long long int s1 = abs((b-a).cross(c-b));
+    long long int area1 = abs((point - a).cross(point - b));
+    long long int area2 = abs((point - b).cross(point - c));
+    long long int area3 = abs((point - c).cross(point - a));
+    long long int s2 = area1 + area2 + area3;
+    return s1 == s2;
+}
+
+bool isinside(vector<Point> &hull, Point p){
+    int n = hull.size();
+    if(n == 1){
+        return (hull.front() == p);
+    }
+    int l = 1;
+    int r = n - 1;
+    int mid;
+    while(abs(r - l) > 1){
+        mid = (r+l)/2;
+        Point tomid = hull[mid] - hull[0];
+        Point topoint = p - hull[0];
+        if(topoint.cross(tomid) < 0){
+            //a esquerda
+            r = mid;
+        } else{
+            l = mid;
+        }
+    }
+    //Point vec = hull[r] - hull[l];
+    //Point tovec = p - hull[l];
+    //return (tovec.cross(vec) > 0);
+    return insidetriangle(hull[0], hull[l], hull[r], p);
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-
 
     return 0;
 }
