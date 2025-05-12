@@ -20,6 +20,10 @@ int main() {
             primos.push_back(i);
         }
     }
+    if(n > 1){
+        primos.push_back(n);
+        freq[n]++;
+    }
 
     return 0;
 }
