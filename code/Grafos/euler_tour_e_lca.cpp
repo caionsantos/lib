@@ -14,7 +14,7 @@ void euler(int v, vector<vector<long long int>> &adj, vector<bool> &vis, vector<
             euler(u, adj, vis, euler_in, euler_out);
         }
     }
-    tempo++;
+    //tempo++; -> desnecessario
     euler_out[v] = tempo;
 }
 
