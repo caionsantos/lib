@@ -58,5 +58,9 @@ int main(){
     //     update(1, 1, n, range, 1, segtree);
     // }
 
+    //SegEuler -> usar updates ao inves do build
+    // query em euler_in[i], euler_out[i]
+    // update em euler_in[i]
+
     return 0;
 }
