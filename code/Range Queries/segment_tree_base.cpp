@@ -58,7 +58,7 @@ int main(){
     //     update(1, 1, n, range, 1, segtree);
     // }
 
-    //SegEuler -> usar updates ao inves do build
+    //SegEuler -> usar updates ao inves do build (ou mapear vetor a[euler_in[i]] - > orig[i]
     // query em euler_in[i], euler_out[i]
     // update em euler_in[i]
 
