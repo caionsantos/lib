@@ -38,6 +38,7 @@ int main() {
     //aa = (((aa % mod) + mod) % mod);
     //bb = hashupto2[i + (pref.size() - 1)] - ((hashupto2[i - 1] * pot2[pref.size()]) % mod2);
     //bb = (((bb % mod2) + mod2) % mod2);
+    //achar periodos facil: hash(0..(n-p)) == hash(p...n) -> so se n for parcial
 
 
     return 0;
