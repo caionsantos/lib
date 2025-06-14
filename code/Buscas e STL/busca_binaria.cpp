@@ -14,7 +14,7 @@ int main() {
     int maximpossivel = 0;
     vector<int> sortado;
     while(r >= l){
-        mid = (l + r)/2;
+        mid = l + (r - l)/2;
         pos = true;
 
         //CHECAGEM
