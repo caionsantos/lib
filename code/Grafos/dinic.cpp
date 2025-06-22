@@ -42,7 +42,7 @@ struct Dinic{
         if(dir){
             invcap = c;
         }
-        all.push_back(aresta(v, u, c));
+        all.push_back(aresta(v, u, invcap));
         adj[v].push_back(all.size()-1);
     }
 
