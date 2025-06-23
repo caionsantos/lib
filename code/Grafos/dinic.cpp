@@ -110,4 +110,28 @@ struct Dinic{
         }
         return flow;
     }
+
 };
+
+/*
+mincut = maxflow
+apos ultima bfs, level[i] == -1 se esta do lado da fonte
+
+emparelhamento max:
+criar src e sink, direcionar arestas src->lado 1, lado 2-> sink
+todas arestas tem peso 1
+emp = maxflow
+
+cobertura minima do bipartido = emparelhamento
+grids sao bipartidos
+
+ind - max independent set
+cob(n) = n - ind(n)
+
+em um grafo com arestas unitarias:
+maxflow = quantidade de caminhos aresta-disjuntos s-t
+cap(corte minimo) = maximo de arestas removidos que quebra os caminhos de s-t
+
+caminhos vertice-disjuntos = maxflow onde vertices sao separados em v1 e v2 com
+aresta unitaria de v1-v2, v1 onde entra e v2 onde sai
+*/
