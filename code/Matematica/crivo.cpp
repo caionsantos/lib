@@ -15,7 +15,7 @@ int main() {
     for(int i = 2; i < lim; i++){
         if(isprime[i]){
             primes.push_back(i);
-            for(int j = i*2; j < lim; j++){
+            for(int j = i*2; j < lim; j+=i){
                 isprime[j] = false;
             } 
         }
