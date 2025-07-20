@@ -134,4 +134,13 @@ cap(corte minimo) = maximo de arestas removidos que quebra os caminhos de s-t
 
 caminhos vertice-disjuntos = maxflow onde vertices sao separados em v1 e v2 com
 aresta unitaria de v1-v2, v1 onde entra e v2 onde sai
+
+fechamento maximo: reduzir para min cut
+lado da fonte: o que adquiriu
+lado do ralo: o que ignorou
+
+se valor real i >= 0 : fonte -> i (valor)
+else i -> ralo (-valor)
+
+dependencias: se precisa de A pra ter B, aresta: B -> A (infinito)
 */
