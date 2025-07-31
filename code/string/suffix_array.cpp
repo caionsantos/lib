@@ -12,9 +12,9 @@ struct SA{
         endrank = vector<ll>(sz);
         lcp = vector<ll>(sz);
     }
-    void suffarray(vector<ll> &s){
+    void suffarray(string &s){
         //ajuste a sentinela se necessario
-        s.push_back(0);
+        s.push_back(char(0));
         const ll n = s.size();
         vector<ll> rank(n), temp(n);
         vector<pair<ll, ll>> etc(n);
@@ -60,8 +60,8 @@ struct SA{
     }
 
     //lcp[i] = lcp de i-1 e i; lcp[0] deve ser ignorado
-    void lcpv(vector<ll> &s){
-        s.push_back(0);
+    void lcpv(string &s){
+        s.push_back(char(0));
         int n = suffarr.size();
 
         for(int i = 0; i < n; i++){
