@@ -26,7 +26,7 @@ long long int gcd(long long int a, long long int b){
 }
 
 long long int lcm(long long int a, long long int b){
-    return (a/(gcd(a,b) * b));
+    return ((a*b)/gcd(a,b);
 }
 
 int main() {
@@ -34,4 +34,5 @@ int main() {
     cin.tie(NULL);
 
     return 0;
+
 }
