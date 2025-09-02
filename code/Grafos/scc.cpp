@@ -61,3 +61,49 @@ void kosaraju(vector<vector<int>> &adj, vector<int> &c, vector<vector<int>> &com
     }
 
 }
+
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    //2SAT
+    //i = x
+    //i^1 = ~x
+    if(!pos){
+        cout << "IMPOSSIVEL" << endl;
+    } else{
+        vector<bool> val(m+1);
+        for(int i = 1; i <= 2*m + 1; i+=2){
+            val[i/2] = co[i] < co[i^1];
+        }
+        for(int i = 1; i <= m; i++){
+            if(val[i]){
+                cout << "S ";
+            } else{
+                cout << "N ";
+            }
+        }
+        cout << endl;
+    }
+
+    /*
+    void add_or(int u, int v){
+		E[eval(~u)].push_back(eval(v));
+		E[eval(~v)].push_back(eval(u));
+  	}
+	void add_nand(int u, int v) {
+		E[eval(u)].push_back(eval(~v));
+		E[eval(v)].push_back(eval(~u));
+	}
+	void set_true (int u){ E[eval(~u)].push_back(eval(u)); }
+	void set_false(int u){ set_true(~u); }
+	void add_imply(int u, int v){ E[eval(u)].push_back(eval(v)); }
+	void add_and  (int u, int v){ set_true(u);  set_true(v);    }
+	void add_nor  (int u, int v){ add_and(~u, ~v); }
+	void add_xor  (int u, int v){ add_or(u, v); add_nand(u, v); }
+	void add_xnor (int u, int v){ add_xor(u, ~v); }
+    */
+
+
+    return 0;
+}
