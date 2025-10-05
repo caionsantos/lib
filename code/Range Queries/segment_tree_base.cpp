@@ -66,3 +66,15 @@ struct Segtree{
     }
 
 };
+
+//ADICIONAR X EM L E -X EM R+1 EH IGUAL A ADICIONAR X EM [L, R]
+//SEGTREE PARA ACHAR MENORES:
+// for(int i = 0; i < n; i++){
+//     range = upper_bound(mansort.begin(), mansort.end(), man[i]) - mansort.begin();
+//     dir[i] = query(1, 1, n, range, n, segtree);
+//     update(1, 1, n, range, 1, segtree);
+// }
+
+//SegEuler -> usar updates ao inves do build (ou mapear vetor a[euler_in[i]] - > orig[i]
+// query em euler_in[i], euler_out[i]
+// update em euler_in[i]
