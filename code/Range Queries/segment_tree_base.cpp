@@ -6,6 +6,8 @@ using namespace std;
 struct Segtree{
     vector<ll> segtree;
     int n;
+    const ll MISS = 0;
+    //nao afetar resultado
     Segtree(vector<ll> &orig){
         segtree.resize(4* (orig.size()));
         n = orig.size();
@@ -53,7 +55,7 @@ struct Segtree{
     //query(1, 1, n)
     ll query(int no, int l, int r, int lq, int rq){
         if((rq < l) or (r < lq)){
-            return 0;
+            return MISS;
         }
         if((lq <= l) and (r <= rq)){
             return segtree[no];
