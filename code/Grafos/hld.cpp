@@ -82,47 +82,47 @@ struct HLD{
         return res;
     }
 
+    //tbl tupla bool-ll-bool
+    //exemplo de query path que não é comutativa (importa a direção)
+    // ll query_path(int a, int b){
+    //     tbl ans_left = seg.MISS;
+    //     tbl ans_right = seg.MISS; 
+
+    //     while(topo[a] != topo[b]){
+    //         if(depth[topo[a]] > depth[topo[b]]){
+    //             //subir a
+
+    //             auto [q0, q1, q2] = seg.query(1, 1, n, pos[topo[a]], pos[a]);
+                    //CONSIDERAR O REVERSO
+    //             ans_left = seg.combine(ans_left, {q2, q1, q0});
+
+    //             a = pai[topo[a]];
+    //         } else{
+    //             //subir b
+    //             tbl qq = seg.query(1, 1, n, pos[topo[b]], pos[b]);
+    //             ans_right = seg.combine(qq, ans_right);
+
+    //             b = pai[topo[b]];
+    //         }
+    //     }
+
+    //     if(depth[a] > depth[b]){
+    //         //b é o lca
+    //         auto [q0, q1, q2] = seg.query(1, 1, n, pos[b], pos[a]);
+    //         ans_left = seg.combine(ans_left, {q2, q1, q0});
+    //     } else{
+    //         tbl q = seg.query(1, 1, n, pos[a], pos[b]);
+    //         ans_right = seg.combine(q, ans_right);
+    //     }
+
+    //     ll ans = get<1>(seg.combine(ans_left, ans_right));
+
+    //     return ans;
+    // }
+
     void init(){
         find_heavy(1, -1, 0);
         chains(1, -1, 1);
     }
 
 };
-
-int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int n, q; cin >> n >> q;
-
-    vector<ll> val(n+1);
-    HLD hv(n);
-    for(int i = 1; i <= n; i++){
-        cin >> val[i];
-    }
-
-    ll c, a, b;
-    for(int i = 1; i < n; i++){
-        cin >> a >> b;
-        a++; b++;
-        hv.add(a, b);
-    }
-
-    hv.init();
-    for(int i = 1; i <= n; i++){
-        hv.update(i, val[i]);
-    }
-
-    while(q--){
-        cin >> c >> a >> b;
-        if(c==1){
-            a++; b++;
-            cout << hv.query_path(a, b) << endl;
-        } else{
-            a++;
-            hv.update(a, b);
-        }
-    }
-
-    return 0;
-}
