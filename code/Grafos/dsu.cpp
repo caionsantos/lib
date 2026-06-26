@@ -11,7 +11,7 @@ int find(int n, vector<int> &rep){
     }
 }
 
-void join(int n, int v, vector<int> &rep, map<int, int> &size){
+void join(int n, int v, vector<int> &rep, vector<int> &size){
     n = find(n, rep);
     v = find(v, rep);
 
@@ -32,8 +32,7 @@ int main() {
     cin.tie(NULL);
 
     int n, m;
-    map<int, int> size;
-    vector<int> rep(n + 1);
+    vector<int> rep(n + 1), size(n+1);
     for(int i = 1; i <= n; i++){
         rep[i] = i;
         size[i]++;

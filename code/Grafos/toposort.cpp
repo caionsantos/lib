@@ -37,16 +37,6 @@ int main() {
             }
         }
     }
-
-    if(toposort.size() == n){
-        for(int i = 0; i < n; i++){
-            cout << toposort[i] << " ";
-        }
-        cout << endl;
-    } else{
-        cout << "IMPOSSIBLE" << endl;
-    }
-
-
+    
     return 0;
 }
